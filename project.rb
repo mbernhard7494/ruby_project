@@ -12,21 +12,19 @@ monthly_request = {}
 month = 12
 request_error = []
 re_count = {}
-array_1 = []
-array_2 = []
 
 puts 'Retrieving the file'
 
 File.readlines ('file1.file').each do |line|
- 
+ # need the if statement to read lines and document
 		  
   
 
   
+  #need to add array of every file
   
   
-  
-  #error og
+  #error log
   if code.to_i >= 400 && code.to_i < 500
         errors = errors + 1
       elsif code.to_i >= 300 && code.to_i < 400
@@ -52,4 +50,4 @@ puts "Average requests per month: #{num_requests / month}
 puts "Most requested file: 
 
 puts "\n All Errors"
-puts "Encountered parsing errors on #{error} lines. "
+puts "Encountered parsing errors on #{re_count} lines. "
