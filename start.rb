@@ -1,5 +1,12 @@
-class String
+require 'date'
+require 'open-uri'
+#Then we want to be able to grab the file into the program
 
- def begin
 
-end
+
+
+num = 0
+each_file = ()
+perday = ()
+errors = ()
+
