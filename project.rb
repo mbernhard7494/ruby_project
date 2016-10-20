@@ -1,7 +1,10 @@
 require 'date'
 require 'open-uri'
 #Then we want to be able to grab the file into the program
-File.open (http://s3.amazonaws.com/tcmg412-fall2016/http_access_log)
+
+File.open ('../logs/http_access_log', 'i') do |file|
+  file.each_line do |line|
+    
 
 
 #variables
@@ -12,4 +15,5 @@ errors = ()
 
 File.foreach(http_access_log) do |line|
   num = num + 1
+  if num >  
   
