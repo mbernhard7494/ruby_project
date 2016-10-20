@@ -18,7 +18,8 @@ array_2 = []
 puts 'Retrieving the file'
 
 File.readlines ('file1.file').each do |line|
-  if line =~ /^\S+ - - \[([a-zA-Z0-9\/]*)\S* \S* "(\w*) (\S*).*["] ([0-9]*) \S+/
+ 
+		  
   
 
   
