@@ -1,4 +1,4 @@
-
+#Michael Bernhard TCMG 412
 require 'open-uri'
 #Then we want to be able to grab the file into the program
 REMOTE_URL = 'http://s3.amazonaws.com/tcmg412-fall2016/http_access_log'
@@ -22,7 +22,15 @@ puts 'Retrieving the file'
 
 File.readlines ('file1.file').each do |line|
  # need the if statement to read lines and document
-		  
+	num_requests += 1
+	
+	#Breaks up the information we need.
+	check = /.*\[(.*) \-[0-9]{4}\] \"([A-Z]+) (.+?)( HTTP.*\"|\") ([2-5]0[0-9]) .*/.match(line)
+	
+	
+	if !check then
+		next
+	end	  
   
 
   
