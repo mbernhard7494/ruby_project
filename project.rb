@@ -12,9 +12,8 @@ num = 0
 num_requests = 0
 requests = 0
 errors = 0
-each_file = {}
 monthly_request = {}
-month = 12
+month = 0
 request_error = []
 re_count = {}
 Array1 = []
@@ -31,9 +30,11 @@ File.readlines ('file1.file').each do |line|
 	if !valid then
 		next
 	end	  
-  
-
-  
+   #adds request to counter
+		
+if ['GET','POST', 'HEAD'].include?(request)
+        total_requests += 1
+      end
   #need to add array of every file
   if monthly_request.has_key? "#{month}"
         monthly_request[month].push(line)
@@ -45,10 +46,10 @@ File.readlines ('file1.file').each do |line|
 totals_3 = 0
 totals_4 = 0
 totals_5 = 0
-counts.each do |code, count|
-	if code[0] == "3" then totals_3 += num end
-	if code[0] == "4" then totals_4 += num end
-	if code[0] == "5" then totals_5 += num end
+counts.each do |error, num|
+	if error[0] == "3" then totals_3 += num end
+	if error[1]== "4" then totals_4 += num end
+	if error[2] == "5" then totals_5 += num end
 end
 re_pct = (totals_4.to_f / requests.to_f * 100).to_i
 pct = (totals_3.to_f / requests.to_f * 100).to_i
