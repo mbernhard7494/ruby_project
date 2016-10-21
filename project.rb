@@ -25,10 +25,10 @@ File.readlines ('file1.file').each do |line|
 	num_requests += 1
 	
 	#Breaks up the information we need.
-	check = /.*\[(.*) \-[0-9]{4}\] \"([A-Z]+) (.+?)( HTTP.*\"|\") ([2-5]0[0-9]) .*/.match(line)
+	valid = /.*\[(.*) \-[0-9]{4}\] \"([A-Z]+) (.+?)( HTTP.*\"|\") ([2-5]0[0-9]) .*/.match(line)
 	
 	
-	if !check then
+	if !valid then
 		next
 	end	  
   
