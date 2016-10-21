@@ -1,8 +1,12 @@
 
 require 'open-uri'
 #Then we want to be able to grab the file into the program
-download = open('http://s3.amazonaws.com/tcmg412-fall2016/http_access_log')
-IO.copy_stream (download, 'file1.file')
+REMOTE_URL = 'http://s3.amazonaws.com/tcmg412-fall2016/http_access_log'
+LOCAL_FILE = 'http_access_log.bak'
+download = open(REMOTE_URL)
+IO.copy_stream(download, LOCAL_FILE)
+
+
 #variables
 num = 0
 num_requests = 0
